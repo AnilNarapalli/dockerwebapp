@@ -5,10 +5,22 @@ services:
    image: shaikmustafa/harikanew:dbimage
    ports:
      - "3306:3306"
+   deploy:
+     replicas:3
+   network:
+     -mynetwork
 
  application:
    image: shaikmustafa/harikanew:appimage
    ports:
      - "1111:8080"
+   deploy:
+      replicas:3
+   network:
+     -mynetwork
    depends_on:
      - "devopsdb"
+networks:
+  -mynetwork:
+    driver:overlay
+  
