@@ -21,6 +21,6 @@ services:
    depends_on:
      - "devopsdb"
 networks:
-  -mynetwork:
+  mynetwork:
     driver:overlay
   
