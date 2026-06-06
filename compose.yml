@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   devopsdb:
-    image: anilkumarnarapalli/automation:db
+    image: anilkumarnarapalli/project:db
     ports:
       - "3306:3306"
     deploy:
@@ -11,7 +11,7 @@ services:
       - mynetwork
 
   application:
-    image: anilkumarnarapalli/automation:app
+    image: anilkumarnarapalli/project:app
     ports:
       - "1111:8080"
     deploy:
